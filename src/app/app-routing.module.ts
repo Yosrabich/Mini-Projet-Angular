@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DepartementDetailsComponent } from './components/departement-details/departement-details.component';
-import { FormDepartementComponent } from './components/form-departement/form-departement.component';
+import { HomeComponent } from './pages/home/home.component';
 
-const routes: Routes = [{path:"",component:FormDepartementComponent},
-    {path:"departement-details/:id", component:DepartementDetailsComponent},
+const routes: Routes = [
+  {path:"", redirectTo:"home", pathMatch:"full"},
+  {path: "departement",
+    loadChildren: () => import('./components/departement/departement.module').then(m =>m.DepartementModule)
+  },
 
-
+  {path:"home", component:HomeComponent},
 ];
 
 @NgModule({

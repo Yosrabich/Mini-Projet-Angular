@@ -40,7 +40,7 @@
 
 
         <td>
-          <button type="button" class="btn btn-outline-primary" routerLink="departement-details/{{d.idDepart}}"
+          <button type="button" class="btn btn-outline-primary" [routerLink]="['departement-details',d.idDepart]"
                  > <img src="../../../assets/img/eye3.png" width="30" height="20"  />
           </button>
           &nbsp;
@@ -82,7 +82,7 @@
                             </div>
                             </form></div>
                              <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary" (click)="edit(departement)" >Save changes</button></div>
+                              <button type="button" class="btn btn-primary" (click)="form.valid;edit(departement)" >Save changes</button></div>
                           </div>
 
                  </div></div></div></div></section></div></main>

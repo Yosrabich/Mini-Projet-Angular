@@ -6,21 +6,23 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
-import { FormDepartementComponent } from './components/form-departement/form-departement.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DepartementDetailsComponent } from './components/departement-details/departement-details.component';
-import { HomeComponent } from './pages/home/home.component'
+
+import { HomeComponent } from './pages/home/home.component';
+import { DepartementModule } from './components/departement/departement.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    FormDepartementComponent,
-    DepartementDetailsComponent,
+
     HomeComponent,
+
 
   ],
   imports: [
@@ -28,7 +30,9 @@ import { HomeComponent } from './pages/home/home.component'
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Departement } from 'src/app/shared/models/departement';
-import { ServiceService } from '../../shared/services/departement.service';
+import { ServiceService } from '../../../shared/services/departement.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 // import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
@@ -21,14 +21,14 @@ export class FormDepartementComponent implements OnInit {
 
   ngOnInit(): void {
 this.form=new FormGroup({
-  nomDepartement: new FormControl('',[Validators.required, Validators.minLength(5)])})
+  nomDepartement: new FormControl('',[Validators.required, Validators.minLength(5)])});
   this.getAllDepartements();
   this.route.data.subscribe((data)=>{
     this.idDepart=data['idDepart'];
 
   })
     this.myForm=new FormGroup({
-      nomDepart: new FormControl('',[Validators.required, Validators.minLength(5)])})
+      nomDepart: new FormControl('',[Validators.required, Validators.minLength(5)])});
       this.getAllDepartements();
       this.route.data.subscribe((data)=>{
         this.idDepart=data['idDepart'];

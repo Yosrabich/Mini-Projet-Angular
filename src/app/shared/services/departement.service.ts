@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Departement } from '../models/departement';
+import { Enseignant } from '../models/Enseignant';
 @Injectable({
   providedIn: 'root'
 })
@@ -28,7 +29,14 @@ export class ServiceService {
     return this._http.get<number>(`${this.API_URL}/Etudiant/nombreEtudiantsByDepartement/${idDepart}`)
 
   }
-  getChefDepart(idDepart:number,fonction:string){
-    return this._http.get(`${this.API_URL}/Enseignat/getChefDepart/${fonction}/${idDepart}`)
+  getChefDepart(fonction:string,idDepart:number):Observable<Enseignant[]>{
+    return this._http.get<Enseignant[]>(`${this.API_URL}/Enseignant/getEnseignant/${fonction}/${idDepart}`)
+  }
+  getNombreEnseignantByDepart(idDepart:number):Observable<number>{
+
+    return  this._http.get<number>(`${this.API_URL}/Enseignant/nombreEnseignantsByDepartement/${idDepart}`)
+  }
+  getEnseignantWithMaxSalaryByDepart(fonction:string,idDepart:number):Observable<Enseignant[]>{
+    return this._http.get<Enseignant[]>(`${this.API_URL}/Enseignant/getEnseignantWithMaxSalaireByDeptAndFonction/${fonction}/${idDepart}`)
   }
 }

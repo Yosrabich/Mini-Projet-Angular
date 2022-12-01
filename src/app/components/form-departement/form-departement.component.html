@@ -1,36 +1,39 @@
 <!-- ********Ajouter département************** -->
-<form [formGroup]="myForm"   (ngSubmit)="onSubmit()">
-  <div ><img src="../../../assets/img/acte.jpg" class="img" width="500px" height="500px"></div>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div><img src="../../../assets/img/acte.jpg" class="img" width="500px" height="500px"></div>
 
   <div class="container ">
-     <h1>Ajouter un département</h1>
+    <h1>Ajouter un département</h1>
 
 
-     <label for="inputText" class="col-sm-2 col-form-label ">Nom département</label>
-     <div class=" col-sm-3 "> <input type="text" class="form-control"  formControlName="nomDepart"  [(ngModel)]="depart.nomDepart"></div>
+    <label for="inputText" class="col-sm-2 col-form-label ">Nom département</label>
+    <div class=" col-sm-3 "><input type="text" class="form-control" formControlName="nomDepart"
+                                   [(ngModel)]="depart.nomDepart"></div>
 
-  <div *ngIf="nomDepart.invalid && nomDepart.touched" style="color: red;">
-    nom du département est obligatoire et<br/>
-     il doit contenir au moins 5 caractéres
-  </div>
+    <div *ngIf="nomDepart.invalid && nomDepart.touched" style="color: red;">
+      nom du département est obligatoire et<br/>
+      il doit contenir au moins 5 caractéres
+    </div>
 
-     <div class="col-sm-4"> <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Ajouter</button></div>
+    <div class="col-sm-4">
+      <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Ajouter</button>
+    </div>
   </div>
 </form>
 
 
- <div class="row">
+<div class="row">
   <div class="col-md-11" style="margin-left: 100px">
     <h1 style="margin-top: 70px">Liste des départements </h1>
     <hr>
 
 
-    <table class="table table-hover"  >
+    <table class="table table-hover">
       <thead>
-      <tr >
+      <tr>
         <th>#</th>
-        <th >Nom </th>
-       <th >Action</th>
+        <th>Nom</th>
+        <th>Action</th>
       </tr>
       </thead>
       <tbody>
@@ -41,14 +44,15 @@
 
         <td>
           <button type="button" class="btn btn-outline-primary" routerLink="departement-details/{{d.idDepart}}"
-                 > <img src="../../../assets/img/eye3.png" width="30" height="20"  />
+          ><img src="../../../assets/img/eye3.png" width="30" height="20"/>
           </button>
           &nbsp;
-          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#verticalycentered" (click)="afficher(d.idDepart)"
-          > <img src="../../../assets/img/edit.png" width="30" height="20"  />
-   </button>  &nbsp;
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal"
+                  data-bs-target="#verticalycentered" (click)="afficher(d.idDepart)"
+          ><img src="../../../assets/img/edit.png" width="30" height="20"/>
+          </button> &nbsp;
           <button type="button" class="btn btn-outline-danger" (click)="delete(d)"
-                  > <img src="../../../assets/img/pobelle.png" width="30" height="20"  />
+          ><img src="../../../assets/img/pobelle.png" width="30" height="20"/>
           </button>
         </td>
       </tr>
@@ -60,29 +64,39 @@
 <!-- ********modifier département************** -->
 <main id="main" class="main">
   <div class="pagetitle">
-<section class="section">
-  <div class="row">
+    <section class="section">
+      <div class="row">
 
-            <div class="col-lg-6">
+        <div class="col-lg-6">
 
-                    <div class="modal fade" id="verticalycentered" tabindex="-1">
-                       <div class="modal-dialog modal-dialog-centered">
-                          <div class="modal-content">
-                             <div class="modal-header">
-                                <h5 class="modal-title">Modifier Département</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                             </div>
+          <div class="modal fade" id="verticalycentered" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modifier Département</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-                             <div class="modal-body" style="float: center;">
-                              <form [formGroup]="form"><label for="nom" class=" col-form-label " >Nom du département</label>
-                             <input type="text" class="form-control"  formControlName="nomDepartement" [(ngModel)]="departement.nomDepart" size="40px">
-                             <div *ngIf="nomDepartement.invalid && nomDepartement.touched" style="color: red;">
-                              nom du département est obligatoire et<br/>
-                               il doit contenir au moins 5 caractéres
-                            </div>
-                            </form></div>
-                             <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <button type="button" class="btn btn-primary" (click)="edit(departement)" >Save changes</button></div>
-                          </div>
+                <div class="modal-body" style="float: center;">
+                  <form [formGroup]="form"><label for="nom" class=" col-form-label ">Nom du département</label>
+                    <input type="text" class="form-control" formControlName="nomDepartement"
+                           [(ngModel)]="departement.nomDepart" size="40px">
+                    <div *ngIf="nomDepartement.invalid && nomDepartement.touched" style="color: red;">
+                      nom du département est obligatoire et<br/>
+                      il doit contenir au moins 5 caractéres
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" (click)="edit(departement)">Save changes</button>
+                </div>
+              </div>
 
-                 </div></div></div></div></section></div></main>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

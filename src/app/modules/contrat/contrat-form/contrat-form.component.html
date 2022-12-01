@@ -1,0 +1,60 @@
+<form [formGroup]="form" (ngSubmit)="ajouterContrat()">
+  <!--  (ngSubmit)="onSubmit()-->
+  <div class="form-group">
+    <label>Archive:</label>
+    <br>
+    <input type="number" class="form-control" formControlName="archive" [(ngModel)]="contrat.archive">
+  </div>
+  <div *ngIf="form.get('archive')?.errors?.['required']" class="alert alert-danger" role="alert">
+    Champ Obligatoire
+  </div>
+  <div *ngIf="form.get('archive')?.errors?.['pattern']" class="alert alert-danger" role="alert">
+    Peut etre 0 ou 1
+  </div>
+
+  <div class="form-group">
+    <label>Date Debut:</label>
+    <br>
+    <input type="date" class="form-control" formControlName="dateDebut" [(ngModel)]="contrat.dateDebutContrat">
+  </div>
+  <div *ngIf="form.get('dateDebut')?.errors?.['required']" class="alert alert-danger" role="alert">
+    Champ Obligatoire
+  </div>
+
+
+  <div class="form-group">
+    <label>Date Fin:</label>
+    <br>
+    <input type="date" class="form-control" formControlName="dateFin" [(ngModel)]="contrat.dateFinContrat">
+  </div>
+  <div *ngIf="form.get('dateFin')?.errors?.['required']" class="alert alert-danger" role="alert">
+    Champ Obligatoire
+  </div>
+  <div *ngIf="form.errors?.['LowerThan']" class="alert alert-danger" role="alert">
+    Date Debut ne peut pas apres date Fin
+  </div>
+
+  <div class="form-group">
+    <label>Montant:</label>
+    <br>
+    <input type="number" class="form-control" formControlName="montant" [(ngModel)]="contrat.montantContrat">
+  </div>
+  <div *ngIf="form.get('montant')?.errors?.['required']" class="alert alert-danger" role="alert">
+    Champ Obligatoire
+  </div>
+
+  <div class="form-group">
+    <label>Specialite:</label>
+    <br>
+    <select formControlName="specialite" [(ngModel)]="contrat.specialite">
+      <option value="IA">IA</option>
+      <option value="RESEAUX">RESEAUX</option>
+      <option value="CLOUD">CLOUD</option>
+      <option value="SECURITE">SECURITE</option>
+    </select>
+  </div>
+  <div *ngIf="form.get('specialite')?.errors?.['required']" class="alert alert-danger" role="alert">
+    Champ Obligatoire
+  </div>
+  <button type="submit">Ajouter</button>
+</form>

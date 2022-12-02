@@ -7,16 +7,15 @@ import {HeaderComponent} from './layouts/header/header.component';
 import {FooterComponent} from './layouts/footer/footer.component';
 import {SidebarComponent} from './layouts/sidebar/sidebar.component';
 import {FormDepartementComponent} from './components/form-departement/form-departement.component';
-
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {DepartementDetailsComponent} from './components/departement-details/departement-details.component';
 import {HomeComponent} from './pages/home/home.component';
-import {FormUniversiteComponent} from './components/form-universite/form-universite.component';
-import {UniversiteDetailsComponent} from './components/universite-details/universite-details.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminUnivComponent } from './components/admin-univ/admin-univ.component';
 import {AjouterUniversiteComponent} from "./components/ajouter-universite/ajouter-universite.component";
+import { AfficherUniversiteComponent } from './components/afficher-universite/afficher-universite.component';
+import { StatistiqueComponent } from './components/statistique/statistique.component';
 
 @NgModule({
   declarations: [
@@ -27,11 +26,11 @@ import {AjouterUniversiteComponent} from "./components/ajouter-universite/ajoute
     FormDepartementComponent,
     DepartementDetailsComponent,
     HomeComponent,
-    FormUniversiteComponent,
-    UniversiteDetailsComponent,
     AdminDashboardComponent,
     AdminUnivComponent,
-    AjouterUniversiteComponent
+    AjouterUniversiteComponent,
+    AfficherUniversiteComponent,
+    StatistiqueComponent
 
 
   ],

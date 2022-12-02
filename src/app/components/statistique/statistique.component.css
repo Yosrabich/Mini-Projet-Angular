@@ -1,0 +1,60 @@
+.statistique{
+  background: #fff;
+  display: flex;
+  height: 300px;
+  align-items: flex-end;
+}
+.statistique-barre{
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  margin: 6px;
+}
+.bar1{
+  height: 95%;
+  background:  #ec1c24;
+}
+.bar2{
+  height: 85%;
+  background:  #00a8f3;
+}
+.bar3{
+  height: 56%;
+  background:  #ec1c24;
+}
+.bar4{
+  height: 75%;
+  background:  #00a8f3;
+}
+.bar5{
+  height: 36%;
+  background:  #ec1c24;
+}
+.bar6{
+  height: 98%;
+  background:  #00a8f3;
+}
+.legende{
+  background: #fff;
+  border-radius: 10px;
+}
+.legende h4{
+  padding: 1rem;
+}
+td .evolution{
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+.evolution.color-one{
+  background: #ec1c24;
+}
+.evolution.color-two{
+  background: #00a8f3;
+}
+.txt-deco{
+  padding: 1rem;
+  font-weight: 500;
+  color: grey;
+}

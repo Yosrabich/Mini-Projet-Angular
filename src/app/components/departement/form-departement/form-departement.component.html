@@ -21,10 +21,18 @@
 
  <div class="row">
   <div class="col-md-11" style="margin-left: 100px">
-    <h1 style="margin-top: 70px">Liste des départements </h1>
-    <hr>
 
+  <div> <h1 style="margin-top: 70px">Liste des départements </h1>
 
+   </div>
+
+    <hr >
+
+    <form class="row g-3" style="float: right;" >
+      <div class="col-auto">
+ <input type="text" class="form-control" placeholder="search" [(ngModel)]="nom" name="nom"/></div><div class="col-auto" style="margin-top: 2px; "><button type="button" class="btn btn-outline-light btn-sm" (click)="search()"
+      > <img src="../../../assets/img/search.png" width="30" height="30"  />
+  </button></div></form>
     <table class="table table-hover"  >
       <thead>
       <tr >
@@ -54,6 +62,7 @@
       </tr>
       </tbody>
     </table>
+
 
   </div>
 </div>

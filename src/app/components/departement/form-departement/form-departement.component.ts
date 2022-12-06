@@ -11,12 +11,15 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./form-departement.component.css']
 })
 export class FormDepartementComponent implements OnInit {
+  nom!:string;
   myForm! :  FormGroup;
   form! :  FormGroup;
+
   list : Departement[] = [];
   depart: Departement = new Departement();
   idDepart!:number;
   departement: Departement = new Departement();
+
   constructor(private sservice:ServiceService,private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -75,10 +78,13 @@ edit(d:Departement){
 afficher(id:number){
   this.departement.idDepart=id;
   this.sservice.getDepartementById(this.departement.idDepart).subscribe(res=>this.departement=res)
+
 // this.depart.nomDepart="yosra"
 }
 
-// cancel() {
-//   this.myForm.reset();
-// }
+search() {
+
+  this.sservice.searchDepartementsByNomDepartContains(this.nom).subscribe(res=>this.list=res);
+   this.nom="";
+}
 }

@@ -39,4 +39,12 @@ export class ServiceService {
   getEnseignantWithMaxSalaryByDepart(fonction:string,idDepart:number):Observable<Enseignant[]>{
     return this._http.get<Enseignant[]>(`${this.API_URL}/Enseignant/getEnseignantWithMaxSalaireByDeptAndFonction/${fonction}/${idDepart}`)
   }
+  getSalaireMoyenByDepart(idDepart:number):Observable<number>{
+    return this._http.get<number>(`${this.API_URL}/Departement/salaireMoyenParDepartement/${idDepart}`)
+
+  }
+  searchDepartementsByNomDepartContains(nom:string):Observable<Departement[]>{
+    return this._http.get<Departement[]>(`${this.API_URL}/Departement/getDepartementsByNomDepartContains/${nom}`)
+
+  }
 }

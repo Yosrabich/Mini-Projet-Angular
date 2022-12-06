@@ -16,7 +16,7 @@ nbEtudiants:number=0;
 nbEnseignants:number=0;
 show:boolean=false;
 
-
+salaireMoyen!:number;
   constructor(private myService:ServiceService,private route: ActivatedRoute, private router: Router) { }
   showForm(){
     this.show=true;
@@ -44,8 +44,9 @@ else
 this.nbEnseignants=0});
 this.myService.getChefDepart("CHEF_DEPARTEMENT",this.idDepart).subscribe(res=>this.Enseignant=res);
 
-
+this.myService.getSalaireMoyenByDepart(this.idDepart).subscribe(res=>this.salaireMoyen=res);
   }
+
 
 
 }

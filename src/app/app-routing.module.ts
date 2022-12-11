@@ -6,6 +6,7 @@ import {UniversiteDetailsComponent} from "./components/universite-details/univer
 import {AdminDashboardComponent} from "./components/admin-dashboard/admin-dashboard.component";
 import {AdminUnivComponent} from "./components/admin-univ/admin-univ.component";
 import {AjouterUniversiteComponent} from "./components/ajouter-universite/ajouter-universite.component";
+import { EtudiantComponent } from './components/etudiant/etudiant.component';
 
 const routes: Routes = [{path: "", component: FormDepartementComponent},
   {path: "departement-details/:id", component: DepartementDetailsComponent},
@@ -21,8 +22,11 @@ const routes: Routes = [{path: "", component: FormDepartementComponent},
       {
         path: 'ajouteruniv', // child route path
         component: AjouterUniversiteComponent, // child route component that the router renders
-      }]
+      },
+      {path: "etudiant", component : EtudiantComponent }
+    ]
   },
+  
 
 
 

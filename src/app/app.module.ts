@@ -17,6 +17,7 @@ import {UniversiteDetailsComponent} from './components/universite-details/univer
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminUnivComponent } from './components/admin-univ/admin-univ.component';
 import {AjouterUniversiteComponent} from "./components/ajouter-universite/ajouter-universite.component";
+import { EtudiantComponent } from './components/etudiant/etudiant.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import {AjouterUniversiteComponent} from "./components/ajouter-universite/ajoute
     UniversiteDetailsComponent,
     AdminDashboardComponent,
     AdminUnivComponent,
-    AjouterUniversiteComponent
+    AjouterUniversiteComponent,
+    EtudiantComponent
+
 
 
   ],
